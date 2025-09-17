@@ -193,7 +193,6 @@ export default function AdminPage() {
                 <Input
                   id="email"
                   type="email"
-                  placeholder="admin@wie-summit.com"
                   value={adminEmail}
                   onChange={(e) => setAdminEmail(e.target.value)}
                 />
@@ -211,9 +210,6 @@ export default function AdminPage() {
               <Button onClick={handleLogin} className="w-full">
                 Login
               </Button>
-              <Alert>
-                <AlertDescription>Demo credentials: admin@wie-summit.com / admin123</AlertDescription>
-              </Alert>
             </div>
           </CardContent>
         </Card>
