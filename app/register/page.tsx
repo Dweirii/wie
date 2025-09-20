@@ -37,6 +37,9 @@ export default function RegisterPage() {
     isIEEEMember: false,
     ieeeNumber: "",
     needsAccommodation: false,
+    includesGalaDinner: false,
+    includesTrip: false,
+    isStudent: false,
     receipt: null as File | null,
   });
 
@@ -48,7 +51,15 @@ export default function RegisterPage() {
 
   const calculatePrice = () => {
     if (formData.needsAccommodation) return 450; // With accommodation
-    return formData.isIEEEMember ? 150 : 200;
+    
+    // New pricing structure based on user requirements
+    if (formData.isIEEEMember && formData.isStudent) {
+      return 75; // Student IEEE member: doesn't include Gala dinner or trip
+    } else if (formData.isIEEEMember) {
+      return formData.includesGalaDinner && formData.includesTrip ? 150 : 100; // IEEE member: 150 with gala+trip, 100 without
+    } else {
+      return formData.includesGalaDinner && formData.includesTrip ? 200 : 150; // Non-IEEE member: 200 with gala+trip, 150 without
+    }
   };
 
   const coerceBool = (v: boolean | "indeterminate") => v === true;
@@ -93,6 +104,9 @@ export default function RegisterPage() {
       isIEEEMember: false,
       ieeeNumber: "",
       needsAccommodation: false,
+      includesGalaDinner: false,
+      includesTrip: false,
+      isStudent: false,
       receipt: null,
     });
   };
@@ -130,6 +144,9 @@ export default function RegisterPage() {
       fd.append("isIEEEMember", String(formData.isIEEEMember));
       fd.append("ieeeNumber", formData.ieeeNumber);
       fd.append("needsAccommodation", String(formData.needsAccommodation));
+      fd.append("includesGalaDinner", String(formData.includesGalaDinner));
+      fd.append("includesTrip", String(formData.includesTrip));
+      fd.append("isStudent", String(formData.isStudent));
       if (formData.receipt) fd.append("receipt", formData.receipt);
 
       const idempotencyKey = crypto.randomUUID?.() ?? `${Date.now()}-${Math.random()}`;
@@ -340,7 +357,7 @@ export default function RegisterPage() {
                           }
                         />
                         <Label htmlFor="ieeeMember" className="text-base font-medium">
-                          I am an IEEE Member ($150 USD)
+                          I am an IEEE Member
                         </Label>
                       </div>
 
@@ -361,6 +378,51 @@ export default function RegisterPage() {
                           />
                         </div>
                       )}
+                    </div>
+                  </div>
+
+                  {/* Event Options */}
+                  <div className="space-y-4">
+                    <h3 className="text-lg font-semibold text-gray-800 border-b pb-2">Event Options</h3>
+                    <div className="space-y-4">
+                      <div className="flex items-center space-x-2">
+                        <Checkbox
+                          id="isStudent"
+                          checked={formData.isStudent}
+                          onCheckedChange={(checked) =>
+                            handleInputChange("isStudent", coerceBool(checked))
+                          }
+                        />
+                        <Label htmlFor="isStudent" className="text-base font-medium">
+                          I am a student
+                        </Label>
+                      </div>
+                      
+                      <div className="flex items-center space-x-2">
+                        <Checkbox
+                          id="galaDinner"
+                          checked={formData.includesGalaDinner}
+                          onCheckedChange={(checked) =>
+                            handleInputChange("includesGalaDinner", coerceBool(checked))
+                          }
+                        />
+                        <Label htmlFor="galaDinner" className="text-base font-medium">
+                          Include Gala Dinner
+                        </Label>
+                      </div>
+                      
+                      <div className="flex items-center space-x-2">
+                        <Checkbox
+                          id="trip"
+                          checked={formData.includesTrip}
+                          onCheckedChange={(checked) =>
+                            handleInputChange("includesTrip", coerceBool(checked))
+                          }
+                        />
+                        <Label htmlFor="trip" className="text-base font-medium">
+                          Include Trip
+                        </Label>
+                      </div>
                     </div>
                   </div>
 
@@ -416,7 +478,7 @@ export default function RegisterPage() {
                     </div>
                   </div>
 
-                  <Button type="submit" className="w-full h-12 text-lg" disabled={isLoading}>
+                  <Button type="submit" className="w-full h-12 text-lg text-white" disabled={isLoading}>
                     {isLoading ? "Registering..." : `Complete Registration - $${calculatePrice()} USD`}
                   </Button>
                 </form>
@@ -536,12 +598,24 @@ export default function RegisterPage() {
                 <div className="space-y-4">
                   <div className="space-y-3">
                     <div className="flex justify-between items-center p-3 bg-gray-50 rounded-lg">
-                      <span className="font-medium">IEEE Member</span>
+                      <span className="font-medium">IEEE Member (with Gala dinner + trip)</span>
                       <span className="font-bold text-purple-800">$150</span>
                     </div>
                     <div className="flex justify-between items-center p-3 bg-gray-50 rounded-lg">
-                      <span className="font-medium">Non-IEEE Member</span>
+                      <span className="font-medium">IEEE Member (without Gala dinner or trip)</span>
+                      <span className="font-bold text-purple-800">$100</span>
+                    </div>
+                    <div className="flex justify-between items-center p-3 bg-blue-50 rounded-lg">
+                      <span className="font-medium">Student IEEE Member</span>
+                      <span className="font-bold text-purple-800">$75</span>
+                    </div>
+                    <div className="flex justify-between items-center p-3 bg-gray-50 rounded-lg">
+                      <span className="font-medium">Non-IEEE Member (with Gala dinner + trip)</span>
                       <span className="font-bold text-purple-800">$200</span>
+                    </div>
+                    <div className="flex justify-between items-center p-3 bg-gray-50 rounded-lg">
+                      <span className="font-medium">Non-IEEE Member (without Gala dinner or trip)</span>
+                      <span className="font-bold text-purple-800">$150</span>
                     </div>
                     <div className="flex justify-between items-center p-3 bg-yellow-100 rounded-lg">
                       <span className="font-medium">With Accommodation</span>

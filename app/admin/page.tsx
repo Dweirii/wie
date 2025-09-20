@@ -21,6 +21,9 @@ interface User {
   isIEEEMember: boolean
   ieeeNumber?: string
   needsAccommodation: boolean
+  includesGalaDinner: boolean
+  includesTrip: boolean
+  isStudent: boolean
   paymentStatus: 'UNPAID' | 'PENDING' | 'APPROVED'
   receiptUrl?: string
   createdAt: string
@@ -67,7 +70,15 @@ export default function AdminPage() {
     if (user.needsAccommodation) {
       return 450
     }
-    return user.isIEEEMember ? 150 : 200
+    
+    // New pricing structure based on user requirements
+    if (user.isIEEEMember && user.isStudent) {
+      return 75; // Student IEEE member: doesn't include Gala dinner or trip
+    } else if (user.isIEEEMember) {
+      return user.includesGalaDinner && user.includesTrip ? 150 : 100; // IEEE member: 150 with gala+trip, 100 without
+    } else {
+      return user.includesGalaDinner && user.includesTrip ? 200 : 150; // Non-IEEE member: 200 with gala+trip, 150 without
+    }
   }
 
   const handleLogin = () => {
@@ -174,6 +185,9 @@ export default function AdminPage() {
     approved: users.filter(u => u.paymentStatus === 'APPROVED').length,
     totalRevenue: users.filter(u => u.paymentStatus === 'APPROVED').reduce((sum, u) => sum + calculatePrice(u), 0),
     ieeeMembers: users.filter(u => u.isIEEEMember).length,
+    students: users.filter(u => u.isStudent).length,
+    withGalaDinner: users.filter(u => u.includesGalaDinner).length,
+    withTrip: users.filter(u => u.includesTrip).length,
     withAccommodation: users.filter(u => u.needsAccommodation).length,
   }
 
@@ -276,6 +290,112 @@ export default function AdminPage() {
           </Card>
         </div>
 
+        {/* Additional Stats Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+          <Card>
+            <CardContent className="p-6">
+              <div className="flex items-center justify-between">
+                <div>
+                  <p className="text-sm font-medium text-gray-600">Students</p>
+                  <p className="text-2xl font-bold text-green-800">{stats.students}</p>
+                </div>
+                <Users className="h-8 w-8 text-green-600" />
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <div className="flex items-center justify-between">
+                <div>
+                  <p className="text-sm font-medium text-gray-600">Gala Dinner</p>
+                  <p className="text-2xl font-bold text-purple-800">{stats.withGalaDinner}</p>
+                </div>
+                <div className="text-2xl">🍽️</div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <div className="flex items-center justify-between">
+                <div>
+                  <p className="text-sm font-medium text-gray-600">Trip</p>
+                  <p className="text-2xl font-bold text-orange-800">{stats.withTrip}</p>
+                </div>
+                <div className="text-2xl">🚌</div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <div className="flex items-center justify-between">
+                <div>
+                  <p className="text-sm font-medium text-gray-600">Accommodation</p>
+                  <p className="text-2xl font-bold text-yellow-800">{stats.withAccommodation}</p>
+                </div>
+                <Building2 className="h-8 w-8 text-yellow-600" />
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+
+        {/* Pricing Breakdown */}
+        <Card className="mb-6">
+          <CardHeader>
+            <CardTitle className="text-xl font-heading font-bold text-purple-800 flex items-center">
+              <DollarSign className="mr-2" size={20} />
+              Pricing Breakdown
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              <div className="p-4 bg-gray-50 rounded-lg">
+                <h4 className="font-semibold text-gray-800 mb-2">IEEE Members</h4>
+                <div className="space-y-1 text-sm">
+                  <div className="flex justify-between">
+                    <span>With Gala + Trip:</span>
+                    <span className="font-bold text-purple-800">$150</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span>Without Gala/Trip:</span>
+                    <span className="font-bold text-purple-800">$100</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span>Student:</span>
+                    <span className="font-bold text-purple-800">$75</span>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="p-4 bg-gray-50 rounded-lg">
+                <h4 className="font-semibold text-gray-800 mb-2">Non-IEEE Members</h4>
+                <div className="space-y-1 text-sm">
+                  <div className="flex justify-between">
+                    <span>With Gala + Trip:</span>
+                    <span className="font-bold text-purple-800">$200</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span>Without Gala/Trip:</span>
+                    <span className="font-bold text-purple-800">$150</span>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="p-4 bg-yellow-50 rounded-lg">
+                <h4 className="font-semibold text-gray-800 mb-2">Special</h4>
+                <div className="space-y-1 text-sm">
+                  <div className="flex justify-between">
+                    <span>With Accommodation:</span>
+                    <span className="font-bold text-purple-800">$450</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
         {/* Filters and Search */}
         <Card className="mb-6">
           <CardContent className="p-6">
@@ -344,7 +464,13 @@ export default function AdminPage() {
               <div className="flex items-center space-x-2 text-sm text-gray-600">
                 <span>IEEE Members: {stats.ieeeMembers}</span>
                 <span>•</span>
-                <span>With Accommodation: {stats.withAccommodation}</span>
+                <span>Students: {stats.students}</span>
+                <span>•</span>
+                <span>Gala Dinner: {stats.withGalaDinner}</span>
+                <span>•</span>
+                <span>Trip: {stats.withTrip}</span>
+                <span>•</span>
+                <span>Accommodation: {stats.withAccommodation}</span>
               </div>
             </CardTitle>
           </CardHeader>
@@ -362,33 +488,23 @@ export default function AdminPage() {
                   >
                     <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
                       <div className="flex-1">
-                        <div className="flex items-start justify-between mb-3">
-                          <div>
-                            <h3 className="text-lg font-semibold text-gray-900">{user.name}</h3>
-                            <div className="flex items-center space-x-4 text-sm text-gray-600 mt-1">
+                        <div className="mb-3">
+                          <h3 className="text-lg font-semibold text-gray-900">{user.name}</h3>
+                          <div className="flex items-center space-x-4 text-sm text-gray-600 mt-1">
+                            <div className="flex items-center">
+                              <Mail className="w-4 h-4 mr-1" />
+                              {user.email}
+                            </div>
+                            <div className="flex items-center">
+                              <MapPin className="w-4 h-4 mr-1" />
+                              {user.country}
+                            </div>
+                            {user.phoneNumber && (
                               <div className="flex items-center">
-                                <Mail className="w-4 h-4 mr-1" />
-                                {user.email}
+                                <Phone className="w-4 h-4 mr-1" />
+                                {user.phoneNumber}
                               </div>
-                              <div className="flex items-center">
-                                <MapPin className="w-4 h-4 mr-1" />
-                                {user.country}
-                              </div>
-                              {user.phoneNumber && (
-                                <div className="flex items-center">
-                                  <Phone className="w-4 h-4 mr-1" />
-                                  {user.phoneNumber}
-                                </div>
-                              )}
-                            </div>
-                          </div>
-                          <div className="text-right">
-                            <div className="text-lg font-bold text-purple-800">
-                              ${calculatePrice(user)} USD
-                            </div>
-                            <div className="text-sm text-gray-500">
-                              {new Date(user.createdAt).toLocaleDateString()}
-                            </div>
+                            )}
                           </div>
                         </div>
 
@@ -407,6 +523,25 @@ export default function AdminPage() {
                             </Badge>
                           )}
                           
+                          {user.isStudent && (
+                            <Badge variant="outline" className="bg-green-50 text-green-800 border-green-200">
+                              <Users className="w-3 h-3 mr-1" />
+                              Student
+                            </Badge>
+                          )}
+                          
+                          {user.includesGalaDinner && (
+                            <Badge variant="outline" className="bg-purple-50 text-purple-800 border-purple-200">
+                              🍽️ Gala Dinner
+                            </Badge>
+                          )}
+                          
+                          {user.includesTrip && (
+                            <Badge variant="outline" className="bg-orange-50 text-orange-800 border-orange-200">
+                              🚌 Trip
+                            </Badge>
+                          )}
+                          
                           {user.needsAccommodation && (
                             <Badge variant="outline" className="bg-yellow-50 text-yellow-800 border-yellow-200">
                               <Building2 className="w-3 h-3 mr-1" />
@@ -422,23 +557,103 @@ export default function AdminPage() {
                         )}
                       </div>
 
-                      <div className="flex items-center space-x-2">
-                        <ImageDisplay 
-                          receiptUrl={user.receiptUrl || ''} 
-                          alt={`Receipt for ${user.name}`}
-                          className="w-20"
-                        />
+                      <div className="flex flex-col items-end space-y-3">
+                        <div className="text-right">
+                          <div className="text-lg font-bold text-purple-800">
+                            ${calculatePrice(user)} USD
+                          </div>
+                          <div className="text-sm text-gray-500">
+                            {new Date(user.createdAt).toLocaleDateString()}
+                          </div>
+                        </div>
                         
-                        {user.paymentStatus === 'PENDING' && (
-                          <Button
-                            size="sm"
-                            onClick={() => approveUser(user.id)}
-                            className="bg-green-600 hover:bg-green-700"
-                          >
-                            <CheckCircle className="w-4 h-4 mr-2" />
-                            Approve
-                          </Button>
-                        )}
+                        <div className="flex items-center space-x-3">
+                          {/* Receipt Display */}
+                          <div className="flex flex-col items-center space-y-2">
+                            {user.receiptUrl ? (
+                              <div className="relative group">
+                                <img
+                                  src={user.receiptUrl}
+                                  alt={`Receipt for ${user.name}`}
+                                  className="w-20 h-20 object-cover rounded-lg border cursor-pointer hover:opacity-90 transition-opacity"
+                                  onClick={() => {
+                                    const dialog = document.createElement('div');
+                                    dialog.className = 'fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50';
+                                    dialog.innerHTML = `
+                                      <div class="bg-white p-4 rounded-lg max-w-4xl max-h-[90vh] overflow-auto">
+                                        <div class="flex justify-between items-center mb-4">
+                                          <h3 class="text-lg font-semibold">Receipt Preview</h3>
+                                          <button onclick="this.closest('.fixed').remove()" class="text-gray-500 hover:text-gray-700">✕</button>
+                                        </div>
+                                        <img src="${user.receiptUrl}" alt="Receipt" class="max-w-full max-h-[70vh] object-contain rounded-lg" />
+                                      </div>
+                                    `;
+                                    document.body.appendChild(dialog);
+                                    dialog.addEventListener('click', (e) => {
+                                      if (e.target === dialog) dialog.remove();
+                                    });
+                                  }}
+                                />
+                                <div className="flex gap-1">
+                                  <Button
+                                    variant="outline"
+                                    size="sm"
+                                    onClick={() => {
+                                      const dialog = document.createElement('div');
+                                      dialog.className = 'fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50';
+                                      dialog.innerHTML = `
+                                        <div class="bg-white p-4 rounded-lg max-w-4xl max-h-[90vh] overflow-auto">
+                                          <div class="flex justify-between items-center mb-4">
+                                            <h3 class="text-lg font-semibold">Receipt Preview</h3>
+                                            <button onclick="this.closest('.fixed').remove()" class="text-gray-500 hover:text-gray-700">✕</button>
+                                          </div>
+                                          <img src="${user.receiptUrl}" alt="Receipt" class="max-w-full max-h-[70vh] object-contain rounded-lg" />
+                                        </div>
+                                      `;
+                                      document.body.appendChild(dialog);
+                                      dialog.addEventListener('click', (e) => {
+                                        if (e.target === dialog) dialog.remove();
+                                      });
+                                    }}
+                                    className="text-xs px-2 py-1"
+                                  >
+                                    <Eye className="w-3 h-3 mr-1" />
+                                    View
+                                  </Button>
+                                  <Button
+                                    variant="outline"
+                                    size="sm"
+                                    onClick={() => {
+                                      const link = document.createElement('a');
+                                      link.href = user.receiptUrl || '';
+                                      link.download = `receipt-${user.name}-${Date.now()}.jpg`;
+                                      link.click();
+                                    }}
+                                    className="text-xs px-2 py-1"
+                                  >
+                                    <Download className="w-3 h-3 mr-1" />
+                                    Download
+                                  </Button>
+                                </div>
+                              </div>
+                            ) : (
+                              <div className="w-20 h-20 bg-gray-100 rounded-lg flex items-center justify-center">
+                                <span className="text-gray-500 text-xs text-center">No receipt</span>
+                              </div>
+                            )}
+                          </div>
+                          
+                          {user.paymentStatus === 'PENDING' && (
+                            <Button
+                              size="sm"
+                              onClick={() => approveUser(user.id)}
+                              className="bg-green-600 hover:bg-green-700"
+                            >
+                              <CheckCircle className="w-4 h-4 mr-2" />
+                              Approve
+                            </Button>
+                          )}
+                        </div>
                       </div>
                     </div>
                   </div>

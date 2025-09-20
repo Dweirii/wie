@@ -14,6 +14,9 @@ export async function POST(request: NextRequest) {
     const isIEEEMember = formData.get('isIEEEMember') === 'true'
     const ieeeNumber = formData.get('ieeeNumber') as string
     const needsAccommodation = formData.get('needsAccommodation') === 'true'
+    const includesGalaDinner = formData.get('includesGalaDinner') === 'true'
+    const includesTrip = formData.get('includesTrip') === 'true'
+    const isStudent = formData.get('isStudent') === 'true'
     const receipt = formData.get('receipt') as File | null
 
     // Validate input
@@ -25,6 +28,9 @@ export async function POST(request: NextRequest) {
       isIEEEMember,
       ieeeNumber,
       needsAccommodation,
+      includesGalaDinner,
+      includesTrip,
+      isStudent,
       receipt,
     })
 
@@ -75,9 +81,12 @@ export async function POST(request: NextRequest) {
         isIEEEMember,
         ieeeNumber: ieeeNumber || null,
         needsAccommodation,
+        includesGalaDinner,
+        includesTrip,
+        isStudent,
         paymentStatus,
         receiptUrl,
-      },
+      } as any,
     })
 
     return NextResponse.json({
@@ -91,6 +100,9 @@ export async function POST(request: NextRequest) {
         isIEEEMember: user.isIEEEMember,
         ieeeNumber: user.ieeeNumber,
         needsAccommodation: user.needsAccommodation,
+        includesGalaDinner: (user as any).includesGalaDinner,
+        includesTrip: (user as any).includesTrip,
+        isStudent: (user as any).isStudent,
         paymentStatus: user.paymentStatus,
       },
       message: receiptUrl 

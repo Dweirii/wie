@@ -25,6 +25,9 @@ model User {
   isIEEEMember  Boolean       @default(false)
   ieeeNumber    String?
   needsAccommodation Boolean  @default(false)
+  includesGalaDinner Boolean  @default(false)
+  includesTrip  Boolean       @default(false)
+  isStudent     Boolean       @default(false)
   paymentStatus PaymentStatus @default(UNPAID)
   receiptUrl    String?
   createdAt     DateTime      @default(now())

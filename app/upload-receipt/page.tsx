@@ -19,6 +19,9 @@ interface User {
   isIEEEMember: boolean
   ieeeNumber?: string
   needsAccommodation: boolean
+  includesGalaDinner: boolean
+  includesTrip: boolean
+  isStudent: boolean
   paymentStatus: 'UNPAID' | 'PENDING' | 'APPROVED'
   receiptUrl?: string
   createdAt: string
@@ -35,7 +38,15 @@ export default function UploadReceiptPage() {
     if (user.needsAccommodation) {
       return 450
     }
-    return user.isIEEEMember ? 150 : 200
+    
+    // New pricing structure based on user requirements
+    if (user.isIEEEMember && user.isStudent) {
+      return 75; // Student IEEE member: doesn't include Gala dinner or trip
+    } else if (user.isIEEEMember) {
+      return user.includesGalaDinner && user.includesTrip ? 150 : 100; // IEEE member: 150 with gala+trip, 100 without
+    } else {
+      return user.includesGalaDinner && user.includesTrip ? 200 : 150; // Non-IEEE member: 200 with gala+trip, 150 without
+    }
   }
 
   const handleSearch = async (e: React.FormEvent) => {

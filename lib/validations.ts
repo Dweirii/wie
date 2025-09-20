@@ -29,6 +29,9 @@ export const registerSchema = z.object({
     .optional()
     .or(emptyToUndef),
   needsAccommodation: z.boolean().default(false),
+  includesGalaDinner: z.boolean().default(false),
+  includesTrip: z.boolean().default(false),
+  isStudent: z.boolean().default(false),
 
   // Validate receipt by metadata (the route will pass {name,size,type})
   receipt: z
@@ -68,6 +71,9 @@ export function parseRegisterFormData(form: FormData) {
     isIEEEMember: toBool(form.get("isIEEEMember")),
     ieeeNumber: form.get("ieeeNumber") ?? undefined,
     needsAccommodation: toBool(form.get("needsAccommodation")),
+    includesGalaDinner: toBool(form.get("includesGalaDinner")),
+    includesTrip: toBool(form.get("includesTrip")),
+    isStudent: toBool(form.get("isStudent")),
     receipt: receipt
       ? { name: receipt.name, size: receipt.size, type: receipt.type }
       : null,
