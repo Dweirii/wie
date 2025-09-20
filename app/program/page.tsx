@@ -29,25 +29,19 @@ const programData: Day[] = [
       { time: "09:00 – 09:02", title: "National Anthem", type: "ceremony" },
       { time: "09:02 – 09:04", title: "Recites from Qur’an", type: "ceremony" },
       {
-        time: "09:02 – 09:15",
+        time: "09:04 – 09:15",
         title: "Welcoming & Introductory Remarks",
         speaker: "Summit Chair: Dr. Yusra Obeidat",
         type: "ceremony",
       },
       {
-        time: "09:15 – 09:25",
-        title: "Remarks by the IEEE Jordan Section Chair",
-        speaker: "Dr. Mousa Al-Akhras",
-        type: "ceremony",
-      },
-      {
-        time: "09:25 – 09:35",
+        time: "09:15 – 09:30",
         title: "(Online) Remarks by the IEEE WIE Global Chairwoman",
         speaker: "Dr. Winnie N. Ye",
         type: "ceremony",
       },
       {
-        time: "09:35 – 10:15",
+        time: "09:30 – 10:15",
         title: "(Online) Distinguished Speech",
         speaker: "Eng. Izzy Hossain, Director at Altera, USA",
         type: "keynote",
@@ -67,7 +61,7 @@ const programData: Day[] = [
         time: "11:30 – 12:30",
         title: "Exhibitors* & Coffee Break",
         speaker:
-          "Booths from WIE-Jordan and WIE AGs (all Jordanian universities), IEEE-Jordan Section, various industries & companies, cultural displays, handmade crafts & artwork booths, Sight Group booth, and the YP booth.",
+          "*Booths from WIE-Jordan and WIE AGs (all Jordanian universities), IEEE-Jordan Section, various industries & companies, cultural displays, handmade crafts & artwork booths, Sight Group booth, and the YP booth.",
         type: "networking",
       },
       {
@@ -82,7 +76,7 @@ const programData: Day[] = [
         time: "13:30 – 14:30",
         title: 'Panel Discussion: "Strategies for Effective Leadership"',
         speaker:
-          "Panelists: TBA, Prof. Fadia Mayyas, Prof. Muwaffaq Otoom. Moderator: Dr. Rula Al-Rawashdeh.",
+          "Panelists: Prof. Ismail Hinti, Prof. Fadia Mayyas, Prof. Muwaffaq Otoom. Moderator: Dr. Rula Al-Rawashdeh.",
         type: "panel",
       },
       { time: "14:30 – 15:30", title: "Lunch", type: "networking" },
@@ -90,7 +84,7 @@ const programData: Day[] = [
         time: "15:30 – 16:30",
         title: 'Panel Discussion: "Driving Policy for Women in STEM"',
         speaker:
-          "H.E. Eng. Amani Azzam (Secretary General, Ministry of Energy), Eng. Reem Hamdan (Director General, Electricity Distribution Company), Eng. Suhair Al-Mhairat (CEO & Co-Founder, NEX-SUS), Eng. Maleeka Zakarnah (CEO & Founder, Jadara Electronics).",
+          "H.E. Eng. Amani Azzam, Eng. Reem Hamdan, Eng. Suhair Al-Mhairat, Eng. Maleeka Zakarnah.",
         type: "panel",
       },
       {
@@ -166,14 +160,6 @@ const programData: Day[] = [
         type: "panel",
       },
       { time: "14:30 – 15:30", title: "Lunch", type: "networking" },
-
-      // Afternoon block — note parallel coffee talk window
-      {
-        time: "15:00 – 15:30",
-        title: 'Coffee Talk: "Breaking Barriers in the Workplace"',
-        speaker: "Facilitated by WIE volunteers",
-        type: "networking",
-      },
       {
         time: "15:30 – 16:00",
         title:
