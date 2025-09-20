@@ -35,7 +35,26 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    
+    // Check if user already exists
+    const existingUser = await prisma.user.findUnique({
+      where: { email }
+    })
+
+    if (existingUser) {
+      return NextResponse.json(
+        {
+          error: 'User with this email already exists',
+          existingUser: {
+            id: existingUser.id,
+            name: existingUser.name,
+            email: existingUser.email,
+            paymentStatus: existingUser.paymentStatus,
+            needsReceipt: existingUser.paymentStatus === 'UNPAID'
+          }
+        },
+        { status: 409 }
+      )
+    }
 
     // Handle receipt upload
     let receiptUrl: string | undefined

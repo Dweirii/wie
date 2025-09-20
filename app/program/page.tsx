@@ -21,89 +21,88 @@ const programData: Day[] = [
   {
     date: "December 6, 2025",
     theme: "Empowering Leadership and Mentorship",
-    venue: "Movenpick Hotel, Amman",
+    venue: "Mövenpick Hotel, Amman",
     sessions: [
+      { time: "08:00 – 09:00", title: "Registration", type: "ceremony" },
+
+      // Opening Ceremony (granular per agenda)
+      { time: "09:00 – 09:02", title: "National Anthem", type: "ceremony" },
+      { time: "09:02 – 09:04", title: "Recites from Qur’an", type: "ceremony" },
       {
-        time: "08:00 – 09:00",
-        title: "Registration",
-        type: "ceremony",
-      },
-      // Opening Ceremony block (broken down by items as in official agenda)
-      {
-        time: "09:00 – 09:15",
+        time: "09:02 – 09:15",
         title: "Welcoming & Introductory Remarks",
-        speaker: "Summit Chair: Dr. Yusra Obeidat – Chair, IEEE WIE Jordan",
+        speaker: "Summit Chair: Dr. Yusra Obeidat",
         type: "ceremony",
       },
       {
-        time: "09:15 – 09:30",
-        title: "Remarks by IEEE WIE Global Chairwoman",
+        time: "09:15 – 09:25",
+        title: "Remarks by the IEEE Jordan Section Chair",
+        speaker: "Dr. Mousa Al-Akhras",
+        type: "ceremony",
+      },
+      {
+        time: "09:25 – 09:35",
+        title: "(Online) Remarks by the IEEE WIE Global Chairwoman",
         speaker: "Dr. Winnie N. Ye",
         type: "ceremony",
       },
       {
-        time: "09:30 – 09:45",
-        title: "Distinguished Speech by the Minister of Digital Economy & Entrepreneurship (MoDEE) – Jordan",
-        type: "ceremony",
+        time: "09:35 – 10:15",
+        title: "(Online) Distinguished Speech",
+        speaker: "Eng. Izzy Hossain, Director at Altera, USA",
+        type: "keynote",
       },
       {
-        time: "09:45 – 10:00",
+        time: "10:15 – 10:35",
         title: "Speech by the Patron of the Ceremony",
         type: "ceremony",
       },
       {
-        time: "10:00 – 10:30",
-        title: "Live Music and Jordanian Dabka",
+        time: "10:35 – 11:30",
+        title: "Live music and Jordanian Dabke",
         type: "ceremony",
       },
+
       {
-        time: "10:30 – 11:30",
+        time: "11:30 – 12:30",
         title: "Exhibitors* & Coffee Break",
         speaker:
-          "Booths from WIE-Jordan & WIE AGs (all Jordanian universities), IEEE-Jordan Section, industries, crafts & artwork, Sight Group, and YP booth",
+          "Booths from WIE-Jordan & WIE AGs (all Jordanian universities), IEEE-Jordan Section, industries & companies, handmade crafts & artwork booths, Sight Group booth, and YP booth.",
         type: "networking",
       },
       {
-        time: "11:30 – 12:30",
-        title: 'Panel Discussion: "Uniting Strengths: The Global Impact of Women in Engineering"',
+        time: "12:30 – 13:30",
+        title:
+          'Panel Discussion: "Uniting Strengths: The Global Impact of Women in Engineering"',
         speaker:
           "Moderator: Dr. Esraa Alsharoa. Panelists: Dr. Yusra Obeidat, Prof. Ala Khalifah, Dr. Celia Shahnaz, Dr. Nadine Abbas",
         type: "panel",
       },
       {
-        time: "12:30 – 13:00",
-        title: 'Keynote Address: "Empowering Women Engineers to Lead Change"',
-        speaker:
-          "Dr. Ruba Khasawneh, CEO of Nexiom Company (semiconductors technology & embedded systems)",
-        type: "keynote",
-      },
-      {
-        time: "13:00 – 14:00",
+        time: "13:30 – 14:30",
         title: 'Panel Discussion: "Strategies for Effective Leadership"',
         speaker:
-          "Panelists: Prof. Rowaida Al-Maaitah, Prof. Fadia Mayyas, Prof. Muwafaq Otoom, Prof. Ismail Henti",
+          "Panelists: TBA, Prof. Fadia Mayyas, Prof. Muwafaq Otoom. Moderator: Dr. Rula Al-Rawashdeh",
+        type: "panel",
+      },
+      { time: "14:30 – 15:30", title: "Lunch", type: "networking" },
+      {
+        time: "15:30 – 16:30",
+        title: 'Panel Discussion: "Driving Policy for Women in STEM"',
+        speaker:
+          "HE Eng. Amani Azzam (Secretary General, Ministry of Energy), Eng. Reem Hamdan (Director General, Electricity Distribution Company), Eng. Suhair Al-Mhairat (CEO & Co-Founder of NEX-SUS), Eng. Maleeka Zakarnen (CEO & Founder of Jadara Electronics)",
         type: "panel",
       },
       {
-        time: "14:00 – 15:00",
-        title: "Lunch",
-        type: "networking",
-      },
-      {
-        time: "15:00 – 16:00",
-        title: 'Workshop: "Building Your Leadership Brand"',
-        speaker: "Facilitators: Eng. Hani Al-Betsh, Eng. Ramy Al-Damati",
-        type: "workshop",
-      },
-      {
-        time: "16:00 – 16:30",
-        title: "Workshop: The R8 YP Opportunities and Activities",
+        time: "16:30 – 17:00",
+        title: "Workshop: The R8 YP opportunities and activities",
         speaker: "By YP Region 8 Chair and YP-Jordan Chair",
         type: "workshop",
       },
       {
-        time: "16:30 – 17:00",
-        title: "WIE Mentorship Program Showcase: Stories from mentees in the WIE-Jordan Program",
+        time: "17:00 – 17:30",
+        title:
+          "WIE Mentorship Program Showcase: Stories from mentees in the WIE-Jordan Program",
         type: "showcase",
       },
     ],
@@ -111,7 +110,7 @@ const programData: Day[] = [
   {
     date: "December 7, 2025",
     theme: "Innovation, Diversity, and Inclusion",
-    venue: "Movenpick Hotel, Amman",
+    venue: "Mövenpick Hotel, Amman",
     sessions: [
       {
         time: "09:00 – 09:15",
@@ -120,28 +119,23 @@ const programData: Day[] = [
         type: "ceremony",
       },
       {
-        time: "09:15 – 09:30",
-        title: "Speech by IEEE-Jordan Section Chair",
-        speaker: "Dr. Mousa Alakhras",
-        type: "ceremony",
-      },
-      {
-        time: "09:30 – 10:30",
-        title: 'Keynote Address: "Innovating with Inclusion"',
-        speaker: "Senior Engineer from Synopsys global tech company: Dr. Fadi Obeidat",
+        time: "09:15 – 10:30",
+        title:
+          'Keynote: "Breaking Barriers, Building Road to Space: Women Engineers Shaping the Future"',
+        speaker: "Dr. Nawar Obeidat, Software Engineer — Blue Origin, USA",
         type: "keynote",
       },
       {
         time: "10:30 – 11:00",
         title:
-          "Workshop: Empowering Leadership – Insights and Journeys from IEEE Life Members",
-        speaker: "Speakers: IEEE-Jordan Life Members",
+          "Workshop: Empowering Leadership — Insights & Journeys from IEEE Life Members",
+        speaker: "IEEE-Jordan Life Members",
         type: "workshop",
       },
       {
         time: "11:00 – 11:30",
         title:
-          "Explore, Engage, Empower: A WIE STAR Workshop for Schoolgirls",
+          "Explore, Engage, Empower — A WIE STAR Workshop for Schoolgirls",
         speaker: "Facilitated by WIE volunteers",
         type: "workshop",
       },
@@ -152,68 +146,64 @@ const programData: Day[] = [
       },
       {
         time: "12:30 – 13:30",
-        title: 'Panel Discussion: "Driving Policy for Women in STEM"',
+        title: 'Workshop: "Building Your Leadership Brand"',
         speaker:
-          "Panelists: HE Eng. Muthana Gharaibeh, HE Eng. Amani Azzam, Manager of Golden Electronics, Eng. Maleeka Zakarneh",
-        type: "panel",
+          "Facilitator: Eng. Lana Al-Adaileh, Head of Strategic Projects / Greater Amman Municipality",
+        type: "workshop",
       },
       {
         time: "13:30 – 14:30",
         title:
-          'From Pixels to Presence: AR/VR and the Evolving World of Interactive Gaming',
-        speaker: "Interactive workshop and videos",
-        type: "workshop",
+          'Panel Discussion: "Empower Her — Navigating the Challenges and Embracing the Opportunities"',
+        speaker:
+          "Panelists: HE Maha Al-Ali, HE Saja Majali, Prof. Sahar Idwan, Dr. Batoul Muheisen. Moderator: Dr. Ruba ALkhasawneh",
+        type: "panel",
       },
-      {
-        time: "14:30 – 15:30",
-        title: "Lunch",
-        type: "networking",
-      },
+      { time: "14:30 – 15:30", title: "Lunch", type: "networking" },
       {
         time: "15:30 – 16:00",
         title:
-          "Securing the Future: Women Pioneers in Cyber Defense",
-        speaker: "Dr. Eman Hammad",
+          "Distinguished Speech: Securing the Future — Women Pioneers in Cyber Defense",
+        speaker: "Marina Ma’aiah, beIN SPORTS, Qatar",
         type: "talk",
       },
       {
         time: "16:00 – 16:30",
         title:
           "Women Leading the Future: Breakthroughs in AI & ML Research",
-        speaker: "Prof. Hiam Quraan",
+        speaker: "Dr. Hiba Alsmadi, Teesside University — United Kingdom",
         type: "talk",
-      },
-      {
-        time: "16:00 – 16:30",
-        title: 'Coffee Talk: "Breaking Barriers in the Workplace"',
-        speaker: "Facilitated by WIE volunteers",
-        type: "talk",
-      },
-      {
-        time: "15:30 – 16:30",
-        title:
-          'Roundtable Panel: "The Business Case for Diversity"',
-        speaker:
-          "Panelists: HR executives from leading Jordanian companies (Hikma, JODDB, Arab Bank, MARS Robotics)",
-        type: "panel",
       },
       {
         time: "16:30 – 17:00",
-        title:
-          'Panel Discussion: EmpowerHER – Navigating the Challenges and Embracing the Opportunities',
-        speaker: "Panelists: HE Saja Majali, Dr. Batoul Muheisen, Dr. Sahar Idwan",
-        type: "panel",
+        title: 'Coffee Talk: "Breaking Barriers in the Workplace"',
+        speaker: "Facilitated by WIE volunteers",
+        type: "networking",
       },
       {
         time: "17:00 – 18:00",
         title:
-          "Keynote Speech: Humanitarian Technologies (HT) Consortium Programs",
+          "The Jordan Energy Chapter: Women-Led Action for Regional Renewable Transformation",
+        speaker: "Mrs. Rasha Marar, Regional Coordinator — RENEW MENA Network",
+        type: "talk",
+      },
+      {
+        time: "18:00 – 18:30",
+        title:
+          "Play, Build, Innovate: Women Engineering Immersive Experience for the Metaverse & Digital Twins",
+        speaker: "Ramy AlDamati, AI & Metaverse Strategic Consultant",
+        type: "talk",
+      },
+      {
+        time: "18:30 – 19:30",
+        title: "Keynote: Humanitarian Technologies (HT) Consortium Programs",
+        speaker: "Dr. Mohamed Saeed Darweesh, YP Region 8 Chair",
         type: "keynote",
       },
       {
-        time: "19:00 – 21:00",
+        time: "20:30 – 22:30",
         title:
-          "Gala Dinner & Speaker Recognition Ceremony + ILS Hackathon Winners Announcement",
+          "Gala Dinner & Speaker Recognition Ceremony",
         speaker:
           "Entertainment & networking with honored guests and speakers; cultural booths, traditional clothing, songs, and dabka",
         type: "networking",
@@ -225,11 +215,7 @@ const programData: Day[] = [
     theme: "Cultural Exploration",
     venue: "Amman",
     sessions: [
-      {
-        time: "07:00 – 09:30",
-        title: "Group Departure",
-        type: "tour",
-      },
+      { time: "09:30", title: "Group Departure", type: "tour" },
       {
         time: "09:30 – 13:00",
         title: "Cultural Tour around the city of Amman",
@@ -248,14 +234,11 @@ const programData: Day[] = [
         speaker: "Networking & Reflection Session",
         type: "networking",
       },
-      {
-        time: "17:30",
-        title: "Return to hotel",
-        type: "tour",
-      },
+      { time: "17:30", title: "Return to hotel", type: "tour" },
     ],
   },
-]
+];
+
 
 const getSessionIcon = (type: string) => {
   switch (type) {

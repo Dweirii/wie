@@ -166,10 +166,9 @@ export default function HomePage() {
               <h3 className="text-xl font-heading font-semibold mb-2 text-purple-800">Day 3 - December 8</h3>
               <p className="text-gray-600 mb-4">Group Depature to Petra</p>
               <ul className="space-y-2 text-sm text-gray-600">
-                <li>• Cultural Tour of Petra</li>
-                <li>• Lunch in Petra</li>
-                <li>• Closing Keynote</li>
-                <li>• Transfer to Wadi Rum Desert Camp</li>
+                <li>• Cultural Tour around the city of Amman</li>
+                <li>• Lunch in Downtown Amman</li>
+                <li>• Transfer to Roman Theater</li>
               </ul>
             </div>
           </div>

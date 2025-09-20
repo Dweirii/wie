@@ -10,7 +10,7 @@ import { Alert, AlertDescription } from "@/components/ui/alert"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { useToast } from "@/hooks/use-toast"
 import { Users, CheckCircle, Clock, XCircle, Search, Eye, Filter, Download, RefreshCw, DollarSign, Calendar, MapPin, Phone, Mail, Hash, Building2 } from "lucide-react"
-import Image from "next/image"
+import { ImageDisplay } from "@/components/ImageDisplay"
 
 interface User {
   id: string
@@ -423,30 +423,11 @@ export default function AdminPage() {
                       </div>
 
                       <div className="flex items-center space-x-2">
-                        {user.receiptUrl && (
-                          <div className="flex items-center space-x-2">
-                            <div className="relative">
-                              <img
-                                src={user.receiptUrl}
-                                alt="Receipt"
-                                className="w-16 h-16 object-cover rounded border cursor-pointer hover:opacity-80"
-                                onClick={() => window.open(user.receiptUrl, '_blank')}
-                              />
-                              <div className="absolute inset-0 bg-black bg-opacity-0 hover:bg-opacity-20 rounded flex items-center justify-center transition-all">
-                                <Eye className="w-4 h-4 text-white opacity-0 hover:opacity-100" />
-                              </div>
-                            </div>
-                            <Button
-                              variant="outline"
-                              size="sm"
-                              onClick={() => window.open(user.receiptUrl, '_blank')}
-                              className="flex items-center"
-                            >
-                              <Eye className="w-4 h-4 mr-2" />
-                              View Full
-                            </Button>
-                          </div>
-                        )}
+                        <ImageDisplay 
+                          receiptUrl={user.receiptUrl || ''} 
+                          alt={`Receipt for ${user.name}`}
+                          className="w-20"
+                        />
                         
                         {user.paymentStatus === 'PENDING' && (
                           <Button

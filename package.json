@@ -1,8 +1,16 @@
 {
-  "name": "my-v0-project",
+  "name": "dweiri-wie-summit-2025",
   "version": "0.1.0",
   "private": true,
+  "pnpm": {
+  "onlyBuiltDependencies": [
+      "@prisma/client",
+      "prisma",
+      "@prisma/engines"
+  ]
+},
   "scripts": {
+    "postinstall": "prisma generate",
     "build": "next build",
     "dev": "next dev",
     "lint": "next lint",
