@@ -25,7 +25,7 @@ const programData: Day[] = [
     sessions: [
       { time: "08:00 – 09:00", title: "Registration", type: "ceremony" },
 
-      // Opening Ceremony (granular per agenda)
+      // Opening Ceremony (granular, per official agenda)
       { time: "09:00 – 09:02", title: "National Anthem", type: "ceremony" },
       { time: "09:02 – 09:04", title: "Recites from Qur’an", type: "ceremony" },
       {
@@ -59,7 +59,7 @@ const programData: Day[] = [
       },
       {
         time: "10:35 – 11:30",
-        title: "Live music and Jordanian Dabke",
+        title: "Live Music and Jordanian Dabka",
         type: "ceremony",
       },
 
@@ -67,7 +67,7 @@ const programData: Day[] = [
         time: "11:30 – 12:30",
         title: "Exhibitors* & Coffee Break",
         speaker:
-          "Booths from WIE-Jordan & WIE AGs (all Jordanian universities), IEEE-Jordan Section, industries & companies, handmade crafts & artwork booths, Sight Group booth, and YP booth.",
+          "Booths from WIE-Jordan and WIE AGs (all Jordanian universities), IEEE-Jordan Section, various industries & companies, cultural displays, handmade crafts & artwork booths, Sight Group booth, and the YP booth.",
         type: "networking",
       },
       {
@@ -75,14 +75,14 @@ const programData: Day[] = [
         title:
           'Panel Discussion: "Uniting Strengths: The Global Impact of Women in Engineering"',
         speaker:
-          "Moderator: Dr. Esraa Alsharoa. Panelists: Dr. Yusra Obeidat, Prof. Ala Khalifah, Dr. Celia Shahnaz, Dr. Nadine Abbas",
+          "Moderator: Dr. Esraa Alsharoa. Panelists: Dr. Yusra Obeidat, Prof. Ala Khalifah, Dr. Celia Shahnaz, Dr. Nadine Abbas.",
         type: "panel",
       },
       {
         time: "13:30 – 14:30",
         title: 'Panel Discussion: "Strategies for Effective Leadership"',
         speaker:
-          "Panelists: TBA, Prof. Fadia Mayyas, Prof. Muwafaq Otoom. Moderator: Dr. Rula Al-Rawashdeh",
+          "Panelists: TBA, Prof. Fadia Mayyas, Prof. Muwaffaq Otoom. Moderator: Dr. Rula Al-Rawashdeh.",
         type: "panel",
       },
       { time: "14:30 – 15:30", title: "Lunch", type: "networking" },
@@ -90,13 +90,13 @@ const programData: Day[] = [
         time: "15:30 – 16:30",
         title: 'Panel Discussion: "Driving Policy for Women in STEM"',
         speaker:
-          "HE Eng. Amani Azzam (Secretary General, Ministry of Energy), Eng. Reem Hamdan (Director General, Electricity Distribution Company), Eng. Suhair Al-Mhairat (CEO & Co-Founder of NEX-SUS), Eng. Maleeka Zakarnen (CEO & Founder of Jadara Electronics)",
+          "H.E. Eng. Amani Azzam (Secretary General, Ministry of Energy), Eng. Reem Hamdan (Director General, Electricity Distribution Company), Eng. Suhair Al-Mhairat (CEO & Co-Founder, NEX-SUS), Eng. Maleeka Zakarnah (CEO & Founder, Jadara Electronics).",
         type: "panel",
       },
       {
         time: "16:30 – 17:00",
-        title: "Workshop: The R8 YP opportunities and activities",
-        speaker: "By YP Region 8 Chair and YP-Jordan Chair",
+        title: "Workshop: The R8 YP Opportunities and Activities",
+        speaker: "Led by YP Region 8 Chair and YP-Jordan Chair",
         type: "workshop",
       },
       {
@@ -119,7 +119,13 @@ const programData: Day[] = [
         type: "ceremony",
       },
       {
-        time: "09:15 – 10:30",
+        time: "09:15 – 09:30",
+        title: "Opening Speech",
+        speaker: "Dr. Mousa Alakhras, IEEE-Jordan Section Chair",
+        type: "ceremony",
+      },
+      {
+        time: "09:30 – 10:30",
         title:
           'Keynote: "Breaking Barriers, Building Road to Space: Women Engineers Shaping the Future"',
         speaker: "Dr. Nawar Obeidat, Software Engineer — Blue Origin, USA",
@@ -148,7 +154,7 @@ const programData: Day[] = [
         time: "12:30 – 13:30",
         title: 'Workshop: "Building Your Leadership Brand"',
         speaker:
-          "Facilitator: Eng. Lana Al-Adaileh, Head of Strategic Projects / Greater Amman Municipality",
+          "Facilitator: Eng. Lana Al-Adileh, Head of Strategic Projects — Greater Amman Municipality",
         type: "workshop",
       },
       {
@@ -156,15 +162,23 @@ const programData: Day[] = [
         title:
           'Panel Discussion: "Empower Her — Navigating the Challenges and Embracing the Opportunities"',
         speaker:
-          "Panelists: HE Maha Al-Ali, HE Saja Majali, Prof. Sahar Idwan, Dr. Batoul Muheisen. Moderator: Dr. Ruba ALkhasawneh",
+          "Panelists: H.E. Maha Al-Ali, H.E. Saja Majali, Prof. Sahar Idwan, Dr. Batoul Muheisen. Moderator: Dr. Ruba Al-Khasawneh.",
         type: "panel",
       },
       { time: "14:30 – 15:30", title: "Lunch", type: "networking" },
+
+      // Afternoon block — note parallel coffee talk window
+      {
+        time: "15:00 – 15:30",
+        title: 'Coffee Talk: "Breaking Barriers in the Workplace"',
+        speaker: "Facilitated by WIE volunteers",
+        type: "networking",
+      },
       {
         time: "15:30 – 16:00",
         title:
           "Distinguished Speech: Securing the Future — Women Pioneers in Cyber Defense",
-        speaker: "Marina Ma’aiah, beIN SPORTS, Qatar",
+        speaker: "Marina Ma’aiah, beIN SPORTS — Qatar",
         type: "talk",
       },
       {
@@ -175,37 +189,30 @@ const programData: Day[] = [
         type: "talk",
       },
       {
-        time: "16:30 – 17:00",
-        title: 'Coffee Talk: "Breaking Barriers in the Workplace"',
-        speaker: "Facilitated by WIE volunteers",
-        type: "networking",
-      },
-      {
-        time: "17:00 – 18:00",
+        time: "15:30 – 16:30",
         title:
           "The Jordan Energy Chapter: Women-Led Action for Regional Renewable Transformation",
         speaker: "Mrs. Rasha Marar, Regional Coordinator — RENEW MENA Network",
         type: "talk",
       },
       {
-        time: "18:00 – 18:30",
+        time: "16:30 – 17:00",
         title:
           "Play, Build, Innovate: Women Engineering Immersive Experience for the Metaverse & Digital Twins",
         speaker: "Ramy AlDamati, AI & Metaverse Strategic Consultant",
         type: "talk",
       },
       {
-        time: "18:30 – 19:30",
+        time: "17:00 – 18:00",
         title: "Keynote: Humanitarian Technologies (HT) Consortium Programs",
         speaker: "Dr. Mohamed Saeed Darweesh, YP Region 8 Chair",
         type: "keynote",
       },
       {
-        time: "20:30 – 22:30",
-        title:
-          "Gala Dinner & Speaker Recognition Ceremony",
+        time: "19:00 – 21:00",
+        title: "Gala Dinner & Speaker Recognition Ceremony",
         speaker:
-          "Entertainment & networking with honored guests and speakers; cultural booths, traditional clothing, songs, and dabka",
+          "Announcing ILS Hackathon winners. Entertainment & networking with honored guests and speakers; cultural booths, traditional clothing, songs, and Jordanian dabka.",
         type: "networking",
       },
     ],
