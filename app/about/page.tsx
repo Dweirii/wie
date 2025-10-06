@@ -40,7 +40,7 @@ export default function AboutPage() {
             </div>
             <div className="bg-gray-50 rounded-2xl p-8">
               <img
-                src="/placeholder.svg?height=300&width=400&text=IEEE+Global+Network"
+                src="/image.png"
                 alt="IEEE Global Network"
                 className="w-full h-auto rounded-lg"
               />

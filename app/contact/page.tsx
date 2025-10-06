@@ -109,7 +109,7 @@ export default function ContactPage() {
                       <h3 className="text-xl font-heading font-semibold text-purple-800 mb-2">Event Location</h3>
                       <p className="text-gray-600 mb-3">Summit Venue</p>
                       <p className="text-gray-700">
-                        Movenpick Hotel, Amman
+                        Bristol Hotel, Amman
                         <br />
                         December 6-8, 2025
                       </p>

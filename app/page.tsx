@@ -39,7 +39,7 @@ export default function HomePage() {
                 <div className="flex items-center space-x-2">
                   <MapPin className="text-yellow-400" size={20} />
                   <div>
-                    <p className="font-semibold">Movenpick Hotel</p>
+                    <p className="font-semibold">Bristol Hotel</p>
                     <p className="text-sm text-purple-200">Amman, Jordan</p>
                   </div>
                 </div>

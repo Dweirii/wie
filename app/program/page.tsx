@@ -113,13 +113,7 @@ const programData: Day[] = [
         type: "ceremony",
       },
       {
-        time: "09:15 – 09:30",
-        title: "Opening Speech",
-        speaker: "Dr. Mousa Alakhras, IEEE-Jordan Section Chair",
-        type: "ceremony",
-      },
-      {
-        time: "09:30 – 10:30",
+        time: "09:15 – 10:30",
         title:
           'Keynote: "Breaking Barriers, Building Road to Space: Women Engineers Shaping the Future"',
         speaker: "Dr. Nawar Obeidat, Software Engineer — Blue Origin, USA",

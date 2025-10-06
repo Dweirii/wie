@@ -237,7 +237,7 @@ export default function SponsorshipPage() {
                 <MapPin className="text-white" size={32} />
               </div>
               <h3 className="text-xl font-heading font-semibold mb-2">Venues</h3>
-              <p className="text-gray-600">Movenpick Hotel, Petra, Wadi Rum</p>
+              <p className="text-gray-600">Bristol Hotel</p>
             </div>
 
             <div className="text-center bg-white p-6 rounded-xl shadow-lg">
