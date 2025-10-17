@@ -208,8 +208,109 @@ export default function SponsorshipPage() {
         </div>
       </section>
 
+      {/* Our Sponsors */}
+      <section className="section-padding bg-white">
+        <div className="container-custom">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-heading font-bold text-purple-800 mb-4">Our Sponsors</h2>
+            <p className="text-lg text-gray-600">
+              Thank you to our valued sponsors who make this summit possible
+            </p>
+          </div>
+
+          {/* Silver Sponsors */}
+          <div className="mb-16">
+            <h3 className="text-2xl font-heading font-bold text-purple-800 mb-8 text-center">Silver Sponsors</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+              <div className="bg-gray-50 rounded-xl p-8 text-center hover:shadow-lg transition-shadow">
+                <div className="w-32 h-32 mx-auto mb-4 bg-white rounded-lg flex items-center justify-center shadow-md">
+                  <div className="text-center">
+                    <div className="text-lg font-bold text-blue-600">EDCO</div>
+                    <div className="text-sm text-gray-600">شركة توزيع الكهرباء</div>
+                  </div>
+                </div>
+                <h4 className="text-lg font-semibold text-purple-800 mb-2">Electricity Distribution Company</h4>
+                <p className="text-gray-600 text-sm">Leading Jordan's electricity distribution sector</p>
+              </div>
+              
+              <div className="bg-gray-50 rounded-xl p-8 text-center hover:shadow-lg transition-shadow">
+                <div className="w-32 h-32 mx-auto mb-4 bg-white rounded-lg flex items-center justify-center shadow-md">
+                  <div className="text-center">
+                    <div className="text-lg font-bold text-red-600">IEEE</div>
+                    <div className="text-sm text-gray-600">Jordan Section</div>
+                  </div>
+                </div>
+                <h4 className="text-lg font-semibold text-purple-800 mb-2">IEEE Jordan Section</h4>
+                <p className="text-gray-600 text-sm">Advancing technology for humanity in Jordan</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Bronze Sponsors */}
+          <div>
+            <h3 className="text-2xl font-heading font-bold text-purple-800 mb-8 text-center">Bronze Sponsors</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+              <div className="bg-orange-50 rounded-xl p-6 text-center hover:shadow-lg transition-shadow">
+                <div className="w-24 h-24 mx-auto mb-4 bg-white rounded-lg flex items-center justify-center shadow-md">
+                  <div className="text-center">
+                    <div className="text-sm font-bold text-red-600">IEEE</div>
+                    <div className="text-xs text-gray-600">Global WIE</div>
+                  </div>
+                </div>
+                <h4 className="text-sm font-semibold text-purple-800 mb-1">IEEE Global WIE</h4>
+                <p className="text-gray-600 text-xs">Women in Engineering globally</p>
+              </div>
+
+              <div className="bg-orange-50 rounded-xl p-6 text-center hover:shadow-lg transition-shadow">
+                <div className="w-24 h-24 mx-auto mb-4 bg-white rounded-lg flex items-center justify-center shadow-md">
+                  <div className="text-center">
+                    <div className="text-sm font-bold text-red-600">IEEE</div>
+                    <div className="text-xs text-gray-600">R8 IAS</div>
+                  </div>
+                </div>
+                <h4 className="text-sm font-semibold text-purple-800 mb-1">IEEE Region 8 IAS</h4>
+                <p className="text-gray-600 text-xs">Industry Applications Society</p>
+              </div>
+
+              <div className="bg-orange-50 rounded-xl p-6 text-center hover:shadow-lg transition-shadow">
+                <div className="w-24 h-24 mx-auto mb-4 bg-white rounded-lg flex items-center justify-center shadow-md">
+                  <div className="text-center">
+                    <div className="text-sm font-bold text-red-600">IEEE</div>
+                    <div className="text-xs text-gray-600">R8 YP</div>
+                  </div>
+                </div>
+                <h4 className="text-sm font-semibold text-purple-800 mb-1">IEEE Region 8 YP</h4>
+                <p className="text-gray-600 text-xs">Young Professionals</p>
+              </div>
+
+              <div className="bg-orange-50 rounded-xl p-6 text-center hover:shadow-lg transition-shadow">
+                <div className="w-24 h-24 mx-auto mb-4 bg-white rounded-lg flex items-center justify-center shadow-md">
+                  <div className="text-center">
+                    <div className="text-sm font-bold text-red-600">IEEE</div>
+                    <div className="text-xs text-gray-600">R8 WIE</div>
+                  </div>
+                </div>
+                <h4 className="text-sm font-semibold text-purple-800 mb-1">IEEE Region 8 WIE</h4>
+                <p className="text-gray-600 text-xs">Women in Engineering</p>
+              </div>
+
+              <div className="bg-orange-50 rounded-xl p-6 text-center hover:shadow-lg transition-shadow">
+                <div className="w-24 h-24 mx-auto mb-4 bg-white rounded-lg flex items-center justify-center shadow-md">
+                  <div className="text-center">
+                    <div className="text-sm font-bold text-red-600">IEEE</div>
+                    <div className="text-xs text-gray-600">R8 SAC</div>
+                  </div>
+                </div>
+                <h4 className="text-sm font-semibold text-purple-800 mb-1">IEEE Region 8 SAC</h4>
+                <p className="text-gray-600 text-xs">Student Activities Committee</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Event Overview */}
-      <section className="section-padding">
+      <section className="section-padding bg-gray-50">
         <div className="container-custom">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-heading font-bold text-purple-800 mb-4">Event Overview</h2>

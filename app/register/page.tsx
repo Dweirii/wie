@@ -52,13 +52,13 @@ export default function RegisterPage() {
   const calculatePrice = () => {
     if (formData.needsAccommodation) return 450; // With accommodation
     
-    // New pricing structure based on user requirements
+    // Updated pricing structure based on user requirements
     if (formData.isIEEEMember && formData.isStudent) {
-      return 75; // Student IEEE member: doesn't include Gala dinner or trip
+      return 50; // Student IEEE member: $50
     } else if (formData.isIEEEMember) {
-      return formData.includesGalaDinner && formData.includesTrip ? 150 : 100; // IEEE member: 150 with gala+trip, 100 without
+      return formData.includesGalaDinner && formData.includesTrip ? 100 : 75; // IEEE member: $100 with gala+trip, $75 without
     } else {
-      return formData.includesGalaDinner && formData.includesTrip ? 200 : 150; // Non-IEEE member: 200 with gala+trip, 150 without
+      return formData.includesGalaDinner && formData.includesTrip ? 125 : 100; // Non-IEEE member: $125 with gala+trip, $100 without
     }
   };
 
@@ -597,25 +597,25 @@ export default function RegisterPage() {
               <CardContent>
                 <div className="space-y-4">
                   <div className="space-y-3">
+                    <div className="flex justify-between items-center p-3 bg-blue-50 rounded-lg">
+                      <span className="font-medium">Student IEEE Member</span>
+                      <span className="font-bold text-purple-800">$50</span>
+                    </div>
                     <div className="flex justify-between items-center p-3 bg-gray-50 rounded-lg">
                       <span className="font-medium">IEEE Member (with Gala dinner + trip)</span>
-                      <span className="font-bold text-purple-800">$150</span>
+                      <span className="font-bold text-purple-800">$100</span>
                     </div>
                     <div className="flex justify-between items-center p-3 bg-gray-50 rounded-lg">
                       <span className="font-medium">IEEE Member (without Gala dinner or trip)</span>
-                      <span className="font-bold text-purple-800">$100</span>
-                    </div>
-                    <div className="flex justify-between items-center p-3 bg-blue-50 rounded-lg">
-                      <span className="font-medium">Student IEEE Member</span>
                       <span className="font-bold text-purple-800">$75</span>
                     </div>
                     <div className="flex justify-between items-center p-3 bg-gray-50 rounded-lg">
-                      <span className="font-medium">Non-IEEE Member (with Gala dinner + trip)</span>
-                      <span className="font-bold text-purple-800">$200</span>
+                      <span className="font-medium">Non-IEEE Member</span>
+                      <span className="font-bold text-purple-800">$100</span>
                     </div>
                     <div className="flex justify-between items-center p-3 bg-gray-50 rounded-lg">
-                      <span className="font-medium">Non-IEEE Member (without Gala dinner or trip)</span>
-                      <span className="font-bold text-purple-800">$150</span>
+                      <span className="font-medium">Non-IEEE Member (with Gala dinner + trip)</span>
+                      <span className="font-bold text-purple-800">$125</span>
                     </div>
                     <div className="flex justify-between items-center p-3 bg-yellow-100 rounded-lg">
                       <span className="font-medium">With Accommodation</span>
@@ -666,6 +666,15 @@ export default function RegisterPage() {
                       <p className="font-semibold">+962 7 9596 1458</p>
                       <p className="text-sm text-gray-600">Contact</p>
                     </div>
+                  </div>
+                  
+                  {/* Hotel Image */}
+                  <div className="mt-4">
+                    <img
+                      src="/hotel.jpg"
+                      alt="Mövenpick Hotel, Amman"
+                      className="w-full h-32 object-cover rounded-lg"
+                    />
                   </div>
                   <div className="flex items-center space-x-3">
                     <Users className="text-purple-800" size={20} />

@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import { Calendar, MapPin, Clock, User, Coffee, Users } from "lucide-react"
+import Image from "next/image"
 
 interface Session {
   time: string
@@ -76,7 +77,7 @@ const programData: Day[] = [
         time: "13:30 – 14:30",
         title: 'Panel Discussion: "Strategies for Effective Leadership"',
         speaker:
-          "Panelists: Prof. Ismail Hinti, Prof. Fadia Mayyas, Prof. Muwaffaq Otoom. Moderator: Dr. Rula Al-Rawashdeh.",
+          "Panelists: Prof. Ismail Hinti, Prof. Fadia Mayyas, Prof. Muwaffaq Otoom, H.E. Eng. Reem Hamdan, Dr. Fadi Obeidat. Moderator: Dr. Rula Al-Rawashdeh.",
         type: "panel",
       },
       { time: "14:30 – 15:30", title: "Lunch", type: "networking" },
@@ -297,10 +298,23 @@ export default function ProgramPage() {
                   Day {activeDay + 1} - {programData[activeDay].date}
                 </h2>
                 <p className="text-xl text-gray-600 mb-2">{programData[activeDay].theme}</p>
-                <div className="flex items-center justify-center space-x-2 text-gray-500">
+                <div className="flex items-center justify-center space-x-2 text-gray-500 mb-4">
                   <MapPin size={16} />
                   <span>{programData[activeDay].venue}</span>
                 </div>
+                
+                {/* Hotel Image */}
+                {programData[activeDay].venue.includes("Mövenpick") && (
+                  <div className="max-w-md mx-auto">
+                    <Image
+                      src="/hotel.jpg"
+                      alt="Mövenpick Hotel, Amman"
+                      width={400}
+                      height={200}
+                      className="w-full h-48 object-cover rounded-lg shadow-md"
+                    />
+                  </div>
+                )}
               </div>
 
               {/* Sessions */}

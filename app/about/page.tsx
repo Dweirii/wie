@@ -96,6 +96,54 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* Venue Section */}
+      <section className="section-padding bg-gray-50">
+        <div className="container-custom">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-heading font-bold text-purple-800 mb-4">Summit Venue</h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              Join us at the prestigious Mövenpick Hotel in Amman for an unforgettable summit experience
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <h3 className="text-2xl font-heading font-bold text-purple-800 mb-4">Mövenpick Hotel, Amman</h3>
+              <p className="text-gray-600 mb-4">
+                Located in the heart of Amman, the Mövenpick Hotel offers world-class facilities and exceptional service, 
+                providing the perfect setting for our international summit.
+              </p>
+              <div className="space-y-3">
+                <div className="flex items-center space-x-3">
+                  <div className="w-2 h-2 bg-purple-600 rounded-full"></div>
+                  <span className="text-gray-600">State-of-the-art conference facilities</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <div className="w-2 h-2 bg-purple-600 rounded-full"></div>
+                  <span className="text-gray-600">Premium accommodation options</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <div className="w-2 h-2 bg-purple-600 rounded-full"></div>
+                  <span className="text-gray-600">Central location in Amman</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <div className="w-2 h-2 bg-purple-600 rounded-full"></div>
+                  <span className="text-gray-600">Easy access to cultural attractions</span>
+                </div>
+              </div>
+            </div>
+            
+            <div className="bg-white rounded-2xl p-4 shadow-lg">
+              <img
+                src="/hotel.jpg"
+                alt="Mövenpick Hotel, Amman"
+                className="w-full h-64 object-cover rounded-lg"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* About ILS Jordan 2025 */}
       <section className="section-padding">
         <div className="container-custom">

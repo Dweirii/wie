@@ -71,13 +71,13 @@ export default function AdminPage() {
       return 450
     }
     
-    // New pricing structure based on user requirements
+    // Updated pricing structure based on user requirements
     if (user.isIEEEMember && user.isStudent) {
-      return 75; // Student IEEE member: doesn't include Gala dinner or trip
+      return 50; // Student IEEE member: $50
     } else if (user.isIEEEMember) {
-      return user.includesGalaDinner && user.includesTrip ? 150 : 100; // IEEE member: 150 with gala+trip, 100 without
+      return user.includesGalaDinner && user.includesTrip ? 100 : 75; // IEEE member: $100 with gala+trip, $75 without
     } else {
-      return user.includesGalaDinner && user.includesTrip ? 200 : 150; // Non-IEEE member: 200 with gala+trip, 150 without
+      return user.includesGalaDinner && user.includesTrip ? 125 : 100; // Non-IEEE member: $125 with gala+trip, $100 without
     }
   }
 
