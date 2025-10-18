@@ -98,14 +98,14 @@ export const speakers = [
     slug: "amani-al-azzam",
     name: "Amani Mohamed Al Azzam",
     title: "Secretary General, Ministry of Energy and Mineral Resources",
-    imageUrl: "https://dweiri.b-cdn.net/WIE/ramy.jpeg",
+    imageUrl: "https://dweiri.b-cdn.net/WIE/PHOTO-2025-10-03-20-27-40.jpg",
     bio: "Amani Al Azzam is the Secretary General of the Ministry of Energy and Mineral Resources (MEMR) of Jordan and serves as the Vice Chairwoman of the National Electric Power Company (NEPCO). She represents Jordan on the Board of Trustees of the Regional Center for Renewable Energy and Energy Efficiency (RECREE) and is a member of the Executive Board of the Eastern Mediterranean Gas Forum (EMGF). With over 34 years of experience in the Jordanian energy sector, Amani began her career at NEPCO after earning her degree in electrical engineering. She focused on grid planning and technical studies, particularly in electrical and gas interconnection projects. Since her appointment as Secretary General in 2016, Amani has been deeply involved in advancing the renewable energy, gas, oil, and mineral resources sectors in Jordan. "
   },
   {
     slug: "Rasha-Abu-Marar",
     name: "Rasha Abu-Marar",
     title: "Focal Point for Women’s Empowerment at the Ministry of Energy and Mineral",
-    imageUrl: "https://dweiri.b-cdn.net/WIE/PHOTO-2025-10-03-20-27-40.jpg",
+    imageUrl: "https://dweiri.b-cdn.net/WIE/PHOTO-2025-10-03-20-28-03.jpg",
     bio: "Rasha Abu-Marar is the Focal Point for Women’s Empowerment at the Ministry of Energy and Mineral Resources in Jordan and the Regional Coordinator of the RENEW MENA Jordan Chapter. She has extensive experience in planning, international cooperation, and leading initiatives that strengthen women’s participation and leadership in the energy sector. Rasha played a pivotal role in establishing and coordinating the Jordan Chapter of RENEW MENA, fostering partnerships that promote inclusive and sustainable development. Beyond her contributions in energy, she has been actively engaged in initiatives advancing human rights, empowering youth, and advocating for persons with disabilities, reflecting her holistic approach to social empowerment. She has also played a key role in national and regional platforms such as She Leads: From Stories to Shaping Solutions and Women on the Green Path, creating spaces for dialogue, mentorship, and collaboration. Through her leadership, Rasha continues to drive meaningful change towards greater participation, equity, and empowerment across sectors in Jordan and the wider MENA region."
   },
   {
