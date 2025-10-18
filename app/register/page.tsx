@@ -656,7 +656,7 @@ export default function RegisterPage() {
                   <div className="flex items-center space-x-3">
                     <MapPin className="text-purple-800" size={20} />
                     <div>
-                      <p className="font-semibold">Mövenpick Hotel, Amman</p>
+                      <p className="font-semibold">Bristol Hotel, Amman</p>
                       <p className="text-sm text-gray-600">Conference Venue</p>
                     </div>
                   </div>
@@ -672,7 +672,7 @@ export default function RegisterPage() {
                   <div className="mt-4">
                     <img
                       src="/hotel.jpg"
-                      alt="Mövenpick Hotel, Amman"
+                      alt="Bristol Hotel, Amman"
                       className="w-full h-32 object-cover rounded-lg"
                     />
                   </div>

@@ -1,4 +1,5 @@
 import { Check, Users, MapPin, Calendar, Mail, Phone, Star, Trophy, Award, Crown } from "lucide-react"
+import Image from "next/image"
 
 const sponsorshipPackages = [
   {
@@ -223,22 +224,28 @@ export default function SponsorshipPage() {
             <h3 className="text-2xl font-heading font-bold text-purple-800 mb-8 text-center">Silver Sponsors</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
               <div className="bg-gray-50 rounded-xl p-8 text-center hover:shadow-lg transition-shadow">
-                <div className="w-32 h-32 mx-auto mb-4 bg-white rounded-lg flex items-center justify-center shadow-md">
-                  <div className="text-center">
-                    <div className="text-lg font-bold text-blue-600">EDCO</div>
-                    <div className="text-sm text-gray-600">شركة توزيع الكهرباء</div>
-                  </div>
+                <div className="w-40 h-32 mx-auto mb-4 bg-white rounded-lg flex items-center justify-center shadow-md">
+                  <Image
+                    src="/sponsors/edco-logo.svg"
+                    alt="EDCO Logo"
+                    width={160}
+                    height={96}
+                    className="w-full h-full object-contain"
+                  />
                 </div>
                 <h4 className="text-lg font-semibold text-purple-800 mb-2">Electricity Distribution Company</h4>
                 <p className="text-gray-600 text-sm">Leading Jordan's electricity distribution sector</p>
               </div>
               
               <div className="bg-gray-50 rounded-xl p-8 text-center hover:shadow-lg transition-shadow">
-                <div className="w-32 h-32 mx-auto mb-4 bg-white rounded-lg flex items-center justify-center shadow-md">
-                  <div className="text-center">
-                    <div className="text-lg font-bold text-red-600">IEEE</div>
-                    <div className="text-sm text-gray-600">Jordan Section</div>
-                  </div>
+                <div className="w-40 h-32 mx-auto mb-4 bg-white rounded-lg flex items-center justify-center shadow-md">
+                  <Image
+                    src="/sponsors/ieee-jordan-logo.svg"
+                    alt="IEEE Jordan Section Logo"
+                    width={160}
+                    height={96}
+                    className="w-full h-full object-contain"
+                  />
                 </div>
                 <h4 className="text-lg font-semibold text-purple-800 mb-2">IEEE Jordan Section</h4>
                 <p className="text-gray-600 text-sm">Advancing technology for humanity in Jordan</p>
@@ -251,55 +258,70 @@ export default function SponsorshipPage() {
             <h3 className="text-2xl font-heading font-bold text-purple-800 mb-8 text-center">Bronze Sponsors</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
               <div className="bg-orange-50 rounded-xl p-6 text-center hover:shadow-lg transition-shadow">
-                <div className="w-24 h-24 mx-auto mb-4 bg-white rounded-lg flex items-center justify-center shadow-md">
-                  <div className="text-center">
-                    <div className="text-sm font-bold text-red-600">IEEE</div>
-                    <div className="text-xs text-gray-600">Global WIE</div>
-                  </div>
+                <div className="w-28 h-28 mx-auto mb-4 bg-white rounded-lg flex items-center justify-center shadow-md">
+                  <Image
+                    src="/sponsors/ieee-global-wie-logo.svg"
+                    alt="IEEE Global WIE Logo"
+                    width={112}
+                    height={112}
+                    className="w-full h-full object-contain"
+                  />
                 </div>
                 <h4 className="text-sm font-semibold text-purple-800 mb-1">IEEE Global WIE</h4>
                 <p className="text-gray-600 text-xs">Women in Engineering globally</p>
               </div>
 
               <div className="bg-orange-50 rounded-xl p-6 text-center hover:shadow-lg transition-shadow">
-                <div className="w-24 h-24 mx-auto mb-4 bg-white rounded-lg flex items-center justify-center shadow-md">
-                  <div className="text-center">
-                    <div className="text-sm font-bold text-red-600">IEEE</div>
-                    <div className="text-xs text-gray-600">R8 IAS</div>
-                  </div>
+                <div className="w-28 h-28 mx-auto mb-4 bg-white rounded-lg flex items-center justify-center shadow-md">
+                  <Image
+                    src="/sponsors/ieee-r8-ias-logo.svg"
+                    alt="IEEE Region 8 IAS Logo"
+                    width={112}
+                    height={112}
+                    className="w-full h-full object-contain"
+                  />
                 </div>
                 <h4 className="text-sm font-semibold text-purple-800 mb-1">IEEE Region 8 IAS</h4>
                 <p className="text-gray-600 text-xs">Industry Applications Society</p>
               </div>
 
               <div className="bg-orange-50 rounded-xl p-6 text-center hover:shadow-lg transition-shadow">
-                <div className="w-24 h-24 mx-auto mb-4 bg-white rounded-lg flex items-center justify-center shadow-md">
-                  <div className="text-center">
-                    <div className="text-sm font-bold text-red-600">IEEE</div>
-                    <div className="text-xs text-gray-600">R8 YP</div>
-                  </div>
+                <div className="w-28 h-28 mx-auto mb-4 bg-white rounded-lg flex items-center justify-center shadow-md">
+                  <Image
+                    src="/sponsors/ieee-r8-yp-logo.svg"
+                    alt="IEEE Region 8 YP Logo"
+                    width={112}
+                    height={112}
+                    className="w-full h-full object-contain"
+                  />
                 </div>
                 <h4 className="text-sm font-semibold text-purple-800 mb-1">IEEE Region 8 YP</h4>
                 <p className="text-gray-600 text-xs">Young Professionals</p>
               </div>
 
               <div className="bg-orange-50 rounded-xl p-6 text-center hover:shadow-lg transition-shadow">
-                <div className="w-24 h-24 mx-auto mb-4 bg-white rounded-lg flex items-center justify-center shadow-md">
-                  <div className="text-center">
-                    <div className="text-sm font-bold text-red-600">IEEE</div>
-                    <div className="text-xs text-gray-600">R8 WIE</div>
-                  </div>
+                <div className="w-28 h-28 mx-auto mb-4 bg-white rounded-lg flex items-center justify-center shadow-md">
+                  <Image
+                    src="/sponsors/ieee-r8-wie-logo.svg"
+                    alt="IEEE Region 8 WIE Logo"
+                    width={112}
+                    height={112}
+                    className="w-full h-full object-contain"
+                  />
                 </div>
                 <h4 className="text-sm font-semibold text-purple-800 mb-1">IEEE Region 8 WIE</h4>
                 <p className="text-gray-600 text-xs">Women in Engineering</p>
               </div>
 
               <div className="bg-orange-50 rounded-xl p-6 text-center hover:shadow-lg transition-shadow">
-                <div className="w-24 h-24 mx-auto mb-4 bg-white rounded-lg flex items-center justify-center shadow-md">
-                  <div className="text-center">
-                    <div className="text-sm font-bold text-red-600">IEEE</div>
-                    <div className="text-xs text-gray-600">R8 SAC</div>
-                  </div>
+                <div className="w-28 h-28 mx-auto mb-4 bg-white rounded-lg flex items-center justify-center shadow-md">
+                  <Image
+                    src="/sponsors/ieee-r8-sac-logo.svg"
+                    alt="IEEE Region 8 SAC Logo"
+                    width={112}
+                    height={112}
+                    className="w-full h-full object-contain"
+                  />
                 </div>
                 <h4 className="text-sm font-semibold text-purple-800 mb-1">IEEE Region 8 SAC</h4>
                 <p className="text-gray-600 text-xs">Student Activities Committee</p>

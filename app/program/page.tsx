@@ -22,7 +22,7 @@ const programData: Day[] = [
   {
     date: "December 6, 2025",
     theme: "Empowering Leadership and Mentorship",
-    venue: "Mövenpick Hotel, Amman",
+    venue: "Bristol Hotel, Amman",
     sessions: [
       { time: "08:00 – 09:00", title: "Registration", type: "ceremony" },
 
@@ -105,7 +105,7 @@ const programData: Day[] = [
   {
     date: "December 7, 2025",
     theme: "Innovation, Diversity, and Inclusion",
-    venue: "Mövenpick Hotel, Amman",
+    venue: "Bristol Hotel, Amman",
     sessions: [
       {
         time: "09:00 – 09:15",
@@ -304,11 +304,11 @@ export default function ProgramPage() {
                 </div>
                 
                 {/* Hotel Image */}
-                {programData[activeDay].venue.includes("Mövenpick") && (
+                {programData[activeDay].venue.includes("Bristol") && (
                   <div className="max-w-md mx-auto">
                     <Image
                       src="/hotel.jpg"
-                      alt="Mövenpick Hotel, Amman"
+                      alt="Bristol Hotel, Amman"
                       width={400}
                       height={200}
                       className="w-full h-48 object-cover rounded-lg shadow-md"
