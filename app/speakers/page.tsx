@@ -93,6 +93,27 @@ export const speakers = [
     title: "Professor of IT; Director, Center for Women’s Studies, HU",
     imageUrl: "https://dweiri.b-cdn.net/WIE/sahar.jpeg",
     bio: "Researcher in applied algorithms, ML, IoT, e-learning, and disaster management. Bridges theory and practice through national/international initiatives promoting women’s participation in education, research, and the labor market."
+  },
+  {
+    slug: "amani-al-azzam",
+    name: "Amani Mohamed Al Azzam",
+    title: "Secretary General, Ministry of Energy and Mineral Resources",
+    imageUrl: "https://dweiri.b-cdn.net/WIE/ramy.jpeg",
+    bio: "Amani Al Azzam is the Secretary General of the Ministry of Energy and Mineral Resources (MEMR) of Jordan and serves as the Vice Chairwoman of the National Electric Power Company (NEPCO). She represents Jordan on the Board of Trustees of the Regional Center for Renewable Energy and Energy Efficiency (RECREE) and is a member of the Executive Board of the Eastern Mediterranean Gas Forum (EMGF). With over 34 years of experience in the Jordanian energy sector, Amani began her career at NEPCO after earning her degree in electrical engineering. She focused on grid planning and technical studies, particularly in electrical and gas interconnection projects. Since her appointment as Secretary General in 2016, Amani has been deeply involved in advancing the renewable energy, gas, oil, and mineral resources sectors in Jordan. "
+  },
+  {
+    slug: "Rasha-Abu-Marar",
+    name: "Rasha Abu-Marar",
+    title: "Focal Point for Women’s Empowerment at the Ministry of Energy and Mineral",
+    imageUrl: "https://dweiri.b-cdn.net/WIE/PHOTO-2025-10-03-20-27-40.jpg",
+    bio: "Rasha Abu-Marar is the Focal Point for Women’s Empowerment at the Ministry of Energy and Mineral Resources in Jordan and the Regional Coordinator of the RENEW MENA Jordan Chapter. She has extensive experience in planning, international cooperation, and leading initiatives that strengthen women’s participation and leadership in the energy sector. Rasha played a pivotal role in establishing and coordinating the Jordan Chapter of RENEW MENA, fostering partnerships that promote inclusive and sustainable development. Beyond her contributions in energy, she has been actively engaged in initiatives advancing human rights, empowering youth, and advocating for persons with disabilities, reflecting her holistic approach to social empowerment. She has also played a key role in national and regional platforms such as She Leads: From Stories to Shaping Solutions and Women on the Green Path, creating spaces for dialogue, mentorship, and collaboration. Through her leadership, Rasha continues to drive meaningful change towards greater participation, equity, and empowerment across sectors in Jordan and the wider MENA region."
+  },
+  {
+    slug: "prof-ismael-al-hinti",
+    name: "Prof. Ismael Al-Hinti",
+    title: "Professor of IT; Director, Center for Women’s Studies, HU",
+    imageUrl: "https://dweiri.b-cdn.net/WIE/PHOTO-2025-10-06-19-07-28.jpg",
+    bio: "RProfessor Ismael Al-Hinti is the President of Al-Hussein Technical University — an initiative of the Crown Prince Foundation — where he is leading a transformation in higher and technical education in Jordan through innovation, project-based learning, and strong industry partnerships. A passionate educator, academic leader, and accomplished entrepreneur, he brings over 23 years of diverse experience across Jordan and the MENA region. Professor Al-Hinti holds a Ph.D. in Mechanical Engineering from Queen’s University Belfast (2002) and a B.Sc. from the University of Jordan (1999). He is a professor of mechanical engineering and a renowned energy expert, as well as the founder and former CEO of ETA-max Energy & Environmental Solutions, having managed more than 300 energy efficiency and solar projects across Jordan, Kuwait, and Saudi Arabia. His contributions have earned him multiple national and international awards. In addition to his academic and entrepreneurial pursuits, he serves as a member of the National Cyber Security Council, the Board of Trustees of the King Abdullah II Award for Innovation, the Jordan Renewable Energy and Energy Efficiency Fund, the Industrial Scientific Research and Development Fund, and Intaj. He also serves on the Engineering and Technology Committee for the Great Arab Minds Award in Dubai, and is a certified trainer and life member of the Association of Energy Engineers (USA). A proud father of three boys, Professor Al-Hinti continues to champion education that bridges academia and employability."
   }
 ];
 
